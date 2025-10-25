@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: customer-batch
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/customer_batch}
+    username: ${SPRING_DATASOURCE_USERNAME:customer}
+    password: ${SPRING_DATASOURCE_PASSWORD:customer}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: true
+logging:
+  level:
+    root: INFO
+
+app:
+  batch:
+    input-directory: ${APP_BATCH_INPUT_DIR:./data/input}
+    file-pattern: ${APP_BATCH_FILE_PATTERN:customer-*.xlsx}

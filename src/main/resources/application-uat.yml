@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://uat-db:5432/customer_batch_uat
+    username: uat_user
+    password: uat_password
+  jpa:
+    show-sql: false
+
+app:
+  batch:
+    input-directory: /opt/app/data/input/uat
