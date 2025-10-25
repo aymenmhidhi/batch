@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://pred-db:5432/customer_batch_pred
+    username: pred_user
+    password: pred_password
+  jpa:
+    show-sql: false
+
+app:
+  batch:
+    input-directory: /opt/app/data/input/pred
